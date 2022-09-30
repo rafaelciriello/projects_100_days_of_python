@@ -1,65 +1,11 @@
 #hangman
+
 import random
+from hangman_art import logo, stages
+from hangman_words import word_list
 
-stages = ['''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
-
-word_list = ["aardvark", "baboon", "camel"]
 chosen_word = random.choice(word_list)
+print(logo)
 print(f"Psssst, {chosen_word}")
 
 display = []
@@ -74,6 +20,8 @@ while not end_the_game:
     print(" ".join(display))
 
     guess = input("Guess a letter: ").lower()
+    if guess in display:
+        print(f"The letter '{guess}' has already been included in the word!")
 
     for position in range(0, len(chosen_word)):
         letter = chosen_word[position]
@@ -81,6 +29,7 @@ while not end_the_game:
             display[position] = letter
 
     if guess not in display:
+        print(f"You chose a letter '{guess}', she is not in the word!")
         lives -= 1
 
     if lives == 0:
