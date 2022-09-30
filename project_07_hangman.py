@@ -31,11 +31,10 @@ while not end_the_game:
     if guess not in display:
         print(f"You chose a letter '{guess}', she is not in the word!")
         lives -= 1
-
-    if lives == 0:
-        print(stages[lives])
-        print("You lose!")
-        end_the_game = True
+        if lives == 0:
+            print(stages[lives])
+            print("You lose!")
+            end_the_game = True
 
     if "_" not in display:
         end_the_game = True
