@@ -10,7 +10,7 @@ def caeser(start_text, shift_amount, which_direction):
     end_text = ""
 
     if which_direction == "decode":
-        shift_amount = shift_amount * -1
+        shift_amount *= -1
 
     for letter in start_text:
         position = alphabet.index(letter)
