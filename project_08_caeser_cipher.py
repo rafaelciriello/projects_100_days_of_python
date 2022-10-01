@@ -6,10 +6,10 @@ direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
 text = input("Type your message:\n").lower()
 shift = int(input("Type the shift number:\n"))
 
-def caeser(start_text, shift_amount, which_direction):
+def caeser(start_text, shift_amount, cypher_direction):
     end_text = ""
 
-    if which_direction == "decode":
+    if cypher_direction == "decode":
         shift_amount *= -1
 
     for letter in start_text:
@@ -19,4 +19,4 @@ def caeser(start_text, shift_amount, which_direction):
         end_text += new_letter
     print(f"The {which_direction} text is {end_text}.")
 
-caeser(start_text=text, shift_amount=shift, which_direction=direction)
+caeser(start_text=text, shift_amount=shift, cypher_direction=direction)
