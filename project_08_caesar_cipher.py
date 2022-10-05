@@ -1,7 +1,8 @@
-#caeser cipher
-from caeser_cipher_art import logo
+#caesar cipher
+from caesar_cipher_art import logo
 alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-
+print(logo)
+print("Welcome to the Caesar Cipher.")
 def caeser(start_text, shift_amount, cypher_direction):
 
     end_text = ""
@@ -22,8 +23,6 @@ def caeser(start_text, shift_amount, cypher_direction):
 end_the_cipher = False
 
 while not end_the_cipher:
-
-    print(logo)
     direction = input("Type 'encode' to encrypt, type 'decode' to decrypt:\n")
     text = input("Type your message:\n").lower()
     shift = int(input("Type the shift number:\n"))
