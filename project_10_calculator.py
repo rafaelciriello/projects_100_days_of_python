@@ -22,7 +22,7 @@ operations = {
     "/": divide,
     }
 
-while True:
+def calculator():
     num1 = int(input("What's the first number? "))
     for symbol in operations:
         print(symbol)
@@ -40,3 +40,6 @@ while True:
             num1 = answer
         else:
             should_continue = False
+            calculator()
+
+calculator()
