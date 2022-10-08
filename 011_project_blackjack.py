@@ -1,14 +1,13 @@
 #blackjack
 import random
+from blackjack_art import logo
 
-#Create a deal_card() function that uses the List below to *return* a random card.
 def deal_card():
     """Returns a random card from the deck."""
     cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
     card = random.choice(cards)
     return card
 
-#Create a function called calculate_score() that takes a List of cards as input and return the score.
 def calculate_score(cards):
     """Take a list of cards and return the score calculated from the cards."""
     if sum(cards) == 21 and len(cards) == 2:
@@ -19,6 +18,7 @@ def calculate_score(cards):
     return sum(cards)
 
 def compare(user_score, computer_score):
+    """Compares the scores of the user and the computer."""
     if user_score == computer_score:
         return "Draw"
     elif computer_score == 0:
@@ -35,6 +35,7 @@ def compare(user_score, computer_score):
         return " You lose"
 
 def play_the_game():
+    print(logo)
     user_cards = []
     computer_cards = []
     is_game_over = False
