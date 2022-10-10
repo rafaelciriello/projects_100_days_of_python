@@ -37,10 +37,10 @@ def game():
     guess = 0
     while guess != number:
         print(f"You have {turns} attempts remaining to guess the number.")
-
         guess = int(input("Make a guess: "))
         turns = check_number(guess, number, turns)
         if turns == 0:
             print("You've run out of guess. You lose.")
             return
+
 game()
