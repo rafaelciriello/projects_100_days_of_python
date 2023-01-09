@@ -1,6 +1,4 @@
 #Tip Calculator (split the bill between friends and calculate tip)
-
-
 print("Welcome to the tip calculator.")
 
 # converting strings to float and int
